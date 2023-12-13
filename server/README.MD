@@ -21,21 +21,8 @@ This code source was developed with the following technologies:
 - [dotenv](https://.npmjs.com/package/dotenv) - Configuration custom file
 - [nodemon](https://.npmjs.com/package/nodemon) - Node monitoring server for development
 
-### 🥷 Techniques
-
-- [N-Tier Architecture](https://www.baeldung.com/cs/n-tier-architecture)
-
-## :information_source: How To Use
-
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v14.16](https://nodejs.org/en/) or higher + [NPM v8](https://nodejs.org/en/) or higher installed on your computer. From your command line:
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/felipeAguiarCode/node-chatgpt-api
-
-# Go into the repository
-$ cd node-chatgpt-api
-
 # Install dependencies
 $ npm install
 
