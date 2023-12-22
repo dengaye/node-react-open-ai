@@ -12,3 +12,7 @@ code {
     monospace;
 }
 
+body:root,
+html:root {
+  --el-text-color: #ffffff; 
+}

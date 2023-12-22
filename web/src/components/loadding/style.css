@@ -1,0 +1,53 @@
+.loading-wrapper {
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 9px;
+  height: 30px;
+}
+
+.loading-content {
+  display: block;
+  position: relative;
+  width: 4px;
+  height: 8px;
+  animation: rectangle infinite 1s ease-in-out -.2s;
+  background-color: var(--el-text-color);
+}
+
+.loading-content:before,.loading-content:after {
+  position: absolute;
+  width: 4px;
+  height: 8px;
+  content: "";
+  background-color: var(--el-text-color);
+}
+
+.loading-content:before {
+  left: -14px;
+  animation: rectangle infinite 1s ease-in-out -.4s
+}
+.loading-content:before {
+  left: -14px;
+  animation: rectangle infinite 1s ease-in-out -.4s
+}
+
+.loading-content:after {
+  right: -14px;
+  animation: rectangle infinite 1s ease-in-out
+}
+
+@keyframes rectangle {
+  0%,80%,to {
+      height: 16px;
+      box-shadow: 0 0 var(--el-text-color)
+  }
+
+  40% {
+      height: 24px;
+      box-shadow: 0 -20px var(--el-text-color)
+  }
+}

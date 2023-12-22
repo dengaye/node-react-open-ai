@@ -6,7 +6,7 @@ const SideMenu = ()=> {
     <aside className='sidemenu'>
       <div className='sidemenu-button'>
         <span>+</span>
-        Novo chat
+        New chat
       </div>
     </aside>
   )
