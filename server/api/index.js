@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
-const { Configuration, OpenAIApi } = require('openai');
+const OpenAI = require('openai');
 
 require("dotenv").config();
 
@@ -23,17 +23,15 @@ app.get('/api', (req, res) => {
 });
 
 app.post('/api/prompt', async (req, res) => {
-  const configuration = new Configuration({
+  const openai = new OpenAI({
     apiKey: process.env.OPEN_AI_KEY,
   });
-
-  const openai = new OpenAIApi(configuration);
 
   const prompt = req.body.prompt;
 
   try { 
-    const response = await openai.createCompletion({
-      model:"text-davinci-003",
+    const response = await openai.completions.create({
+      model:"gpt-4",
 			prompt:`${prompt}`,
 			temperature: 0,
 			max_tokens: 3500,
