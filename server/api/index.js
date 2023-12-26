@@ -31,7 +31,7 @@ app.post('/api/prompt', async (req, res) => {
 
   try { 
     const response = await openai.completions.create({
-      model:"gpt-4",
+      model:"text-davinci-003",
 			prompt:`${prompt}`,
 			temperature: 0,
 			max_tokens: 3500,
