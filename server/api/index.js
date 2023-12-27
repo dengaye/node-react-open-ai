@@ -30,26 +30,22 @@ app.post('/api/prompt', async (req, res) => {
   const prompt = req.body.prompt;
 
   try { 
-    const response = await openai.completions.create({
-      model:"text-davinci-003",
-			prompt:`${prompt}`,
-			temperature: 0,
-			max_tokens: 3500,
-			top_p:1,
-			frequency_penalty: 0.5,
-			presence_penalty: 0
-    })
+    const completion = await openai.chat.completions.create({
+      messages: [{ role: "user", content: prompt }],
+      model: "gpt-4",
+    });
 
     return res.status(200).json({
       sucess: true,
-      data: response.data.choices[0].text
+      msg: completion,
+      data: completion.choices[0].message.content
     })
+
   } catch (error) {
     return res.status(400).json({
       sucess: false,
-      error: error.response
-      ? error.response.data
-      : 'There was an inssue on the server'
+      message: error,
+      error: error?.response?.data || error?.response?.message || error?.cause?.message || 'There was an inssue on the server'
     })
   }
 })
